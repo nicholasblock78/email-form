@@ -13,7 +13,7 @@ class TasksController < ApplicationController
     content = SendGrid::Content.new(type: 'text/plain', value: "Directed from: #{@task.href} \n Description: #{@task.description} \n Steps to Reproduce: #{@task.reproduce}")
     mail = SendGrid::Mail.new(from, subject, to, content)
 
-    sg = SendGrid::API.new(api_key: SENDGRID_KEY)
+    sg = SendGrid::API.new(api_key: ENV['SENDGRID_KEY'])
     response = sg.client.mail._('send').post(request_body: mail.to_json)
     puts response.status_code
     puts response.body
