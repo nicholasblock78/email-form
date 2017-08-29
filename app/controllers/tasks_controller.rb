@@ -6,11 +6,11 @@ class TasksController < ApplicationController
 
   def send_email
     puts "-------------"
-    @task = Task.create(name: params[:name],email_to_send: params[:email_to_send],description: params[:description],href: params[:href])
+    @task = Task.create(subject: params[:subject],email_to_send: params[:email_to_send],description: params[:description],href: params[:href])
     p @task
     from = Email.new(email: "#{@task.email_to_send}")
     to = Email.new(email: 'nicholasblock78@gmail.com')
-    subject = "#{@task.name}"
+    subject = "#{@task.subject}"
     content = Content.new(type: 'text/plain', value: "Directed from: #{@task.href} \n Description: #{@task.description}")
     mail = Mail.new(from, subject, to, content)
 

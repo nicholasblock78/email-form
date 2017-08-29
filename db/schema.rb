@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20170828220640) do
   enable_extension "plpgsql"
 
   create_table "tasks", force: :cascade do |t|
-    t.string   "name"
+    t.string   "subject"
     t.string   "email_to_send"
     t.string   "description"
     t.string   "href"

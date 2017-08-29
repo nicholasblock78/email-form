@@ -1,15 +1,21 @@
 <h1>Testing for Support Email Form Pop-Up</h1>
+<script type="text/javascript">
+
+</script>
   <button id="email-btn" type="button" name="button">Need more help?</button>
   <div id="email-form" style="display:none;">
-    <form class="" action="/send_email.html" method="POST">
-      <label for="name">Name: </label>
-      <input required="required" id="email-name" type="text" name="name" value="" placeholder="Name">
-      <label for="email">Email: </label>
+    <form class="" action="/send_email.html" method="POST" onsubmit="">
+      <label for="name">Subject<span class="require">*</span>: </label>
+      <input required="required" id="email-subject" type="text" name="subject" value="" placeholder="Subject">
+      <br>
+      <label for="email">Email<span class="require">*</span>: </label>
       <input required="required" id="email-email" type="text" name="email_to_send" value="" placeholder="Email">
-      <label for="description">Description: </label>
+      <br>
+      <label for="description">Description<span class="require">*</span>: </label>
       <input required="required" id="email-description" type="textarea" name="description" value="" placeholder="Description">
+      <br>
       <label for="reproduce">Steps to Reproduce: </label>
-      <input id="reproduce" type="textarea" name="reproduce" value="" placeholder="Description">
+      <input id="reproduce" type="textarea" name="reproduce" value="" placeholder="Steps to Reproduce">
       <input type="submit" name="" value="Submit">
     </form>
   </div>
