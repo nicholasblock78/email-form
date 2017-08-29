@@ -1,15 +1,12 @@
 <h1>Testing for Support Email Form Pop-Up</h1>
-<script
-  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
-  crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
 <script type="text/javascript">
 $(function () {
   $('#email-btn').on('click', function(e) {
     // e.preventDefault();
     $('#email-form').toggle();
     $('div').show();
-    var href = window.location.href
+    var href = window.location.href;
     $('#email-description').after("<input type='hidden' name='href' value='"+href+"'>");
   });
 })
@@ -18,16 +15,16 @@ $(function () {
   <div id="email-form" style="display:none;">
     <form class="" action="/send_email.html" method="POST" onsubmit="">
       <label for="name">Subject<span class="require">*</span>: </label>
-      <input required="required" id="email-subject" type="text" name="subject" value="" placeholder="Subject">
-      <br>
+      <input required="required" id="email-subject" type="text" name="subject" value="" placeholder="Subject" />
+      <br/>
       <label for="email">Email<span class="require">*</span>: </label>
-      <input required="required" id="email-email" type="text" name="email_to_send" value="" placeholder="Email">
-      <br>
+      <input required="required" id="email-email" type="text" name="email_to_send" value="" placeholder="Email" />
+      <br/>
       <label for="description">Description<span class="require">*</span>: </label>
-      <input required="required" id="email-description" type="textarea" name="description" value="" placeholder="Description">
-      <br>
+      <input required="required" id="email-description" type="textarea" name="description" value="" placeholder="Description"/>
+      <br/>
       <label for="reproduce">Steps to Reproduce: </label>
-      <input id="reproduce" type="textarea" name="reproduce" value="" placeholder="Steps to Reproduce">
+      <input id="reproduce" type="textarea" name="reproduce" value="" placeholder="Steps to Reproduce"/>
       <input type="submit" name="" value="Submit">
     </form>
   </div>
