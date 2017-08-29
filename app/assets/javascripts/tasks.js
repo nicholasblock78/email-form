@@ -1,7 +1,6 @@
 $(function () {
   $('#email-btn').on('click', function(e) {
     // e.preventDefault();
-    // $(this).text()="hello";
     $('#email-form').toggle();
     $('div').show();
     var href = window.location.href

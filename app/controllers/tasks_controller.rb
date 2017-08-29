@@ -6,12 +6,12 @@ class TasksController < ApplicationController
 
   def send_email
     puts "-------------"
-    @task = Task.create(subject: params[:subject],email_to_send: params[:email_to_send],description: params[:description],href: params[:href])
+    @task = Task.create(subject: params[:subject],email_to_send: params[:email_to_send],description: params[:description],href: params[:href],reproduce: params[:reproduce])
     p @task
     from = Email.new(email: "#{@task.email_to_send}")
     to = Email.new(email: 'nicholasblock78@gmail.com')
     subject = "#{@task.subject}"
-    content = Content.new(type: 'text/plain', value: "Directed from: #{@task.href} \n Description: #{@task.description}")
+    content = Content.new(type: 'text/plain', value: "Directed from: #{@task.href} \n Description: #{@task.description} \n Steps to Reproduce: #{@task.reproduce}")
     mail = Mail.new(from, subject, to, content)
 
     sg = SendGrid::API.new(api_key: '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')
@@ -26,7 +26,7 @@ class TasksController < ApplicationController
   private
   def task_params
     # params.require(:task).permit(:name,:email_to_send,:description)
-    params.permit(:name,:email_to_send,:description,:href)
+    params.permit(:name,:email_to_send,:description,:href,:reproduce)
     # params.permit(:name,:email_to_send,:description).to_h
   end
 end
