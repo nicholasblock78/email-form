@@ -1,6 +1,18 @@
 <h1>Testing for Support Email Form Pop-Up</h1>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+  crossorigin="anonymous"></script>
 <script type="text/javascript">
-
+$(function () {
+  $('#email-btn').on('click', function(e) {
+    // e.preventDefault();
+    $('#email-form').toggle();
+    $('div').show();
+    var href = window.location.href
+    $('#email-description').after("<input type='hidden' name='href' value='"+href+"'>");
+  });
+})
 </script>
   <button id="email-btn" type="button" name="button">Need more help?</button>
   <div id="email-form" style="display:none;">
