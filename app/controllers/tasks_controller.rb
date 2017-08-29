@@ -1,5 +1,4 @@
 require 'sendgrid-ruby'
-# include SendGrid
 class TasksController < ApplicationController
   def index
   end
@@ -11,7 +10,7 @@ class TasksController < ApplicationController
     from = SendGrid::Email.new(email: "#{@task.email_to_send}")
     to = SendGrid::Email.new(email: 'support@powerreviews.com')
     subject = "#{@task.subject}"
-    content = Content.new(type: 'text/plain', value: "Directed from: #{@task.href} \n Description: #{@task.description} \n Steps to Reproduce: #{@task.reproduce}")
+    content = SendGrid::Content.new(type: 'text/plain', value: "Directed from: #{@task.href} \n Description: #{@task.description} \n Steps to Reproduce: #{@task.reproduce}")
     mail = SendGrid::Mail.new(from, subject, to, content)
 
     sg = SendGrid::API.new(api_key: SENDGRID_KEY)
