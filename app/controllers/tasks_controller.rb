@@ -1,5 +1,5 @@
 require 'sendgrid-ruby'
-include SendGrid
+# include SendGrid
 class TasksController < ApplicationController
   def index
   end
