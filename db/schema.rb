@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20170828220640) do
     t.string   "name"
     t.string   "email_to_send"
     t.string   "description"
+    t.string   "href"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end

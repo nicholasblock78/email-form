@@ -2,12 +2,9 @@
   <button id="email-btn" type="button" name="button">Need more help?</button>
   <div id="email-form" style="display:none;">
     <form class="" action="/send_email.html" method="POST">
-      <input id="email-name" type="text" name="name" value="" placeholder="Name">
-      <input id="email-email" type="text" name="email_to_send" value="" placeholder="Email">
-      <!-- <fieldset>
-      Place related product features here
-      </fieldset> -->
-      <input id="email-description" type="textarea" name="description" value="" placeholder="Description">
+      <input required="required" id="email-name" type="text" name="name" value="" placeholder="Name">
+      <input required="required" id="email-email" type="text" name="email_to_send" value="" placeholder="Email">
+      <input required="required" id="email-description" type="textarea" name="description" value="" placeholder="Description">
       <input type="submit" name="" value="Submit">
     </form>
   </div>

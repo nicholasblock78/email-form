@@ -4,6 +4,7 @@ class CreateTasks < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :email_to_send
       t.string :description
+      t.string :href
 
       t.timestamps
     end
