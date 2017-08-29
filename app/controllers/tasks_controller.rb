@@ -19,7 +19,7 @@ class TasksController < ApplicationController
     puts response.body
     puts response.headers
 
-    redirect_to root_url
+    redirect_to(:back)
   end
 
   private
