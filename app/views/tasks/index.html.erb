@@ -2,9 +2,14 @@
   <button id="email-btn" type="button" name="button">Need more help?</button>
   <div id="email-form" style="display:none;">
     <form class="" action="/send_email.html" method="POST">
+      <label for="name">Name: </label>
       <input required="required" id="email-name" type="text" name="name" value="" placeholder="Name">
+      <label for="email">Email: </label>
       <input required="required" id="email-email" type="text" name="email_to_send" value="" placeholder="Email">
+      <label for="description">Description: </label>
       <input required="required" id="email-description" type="textarea" name="description" value="" placeholder="Description">
+      <label for="reproduce">Steps to Reproduce: </label>
+      <input id="reproduce" type="textarea" name="reproduce" value="" placeholder="Description">
       <input type="submit" name="" value="Submit">
     </form>
   </div>

@@ -11,10 +11,10 @@ class TasksController < ApplicationController
     from = Email.new(email: "#{@task.email_to_send}")
     to = Email.new(email: 'nicholasblock78@gmail.com')
     subject = "#{@task.name}"
-    content = Content.new(type: 'text/plain', value: "Directed from: #{@task.href}  Description: #{@task.description}")
+    content = Content.new(type: 'text/plain', value: "Directed from: #{@task.href} \n Description: #{@task.description}")
     mail = Mail.new(from, subject, to, content)
 
-    sg = SendGrid::API.new(api_key: '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')
+    sg = SendGrid::API.new(api_key: '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')
     response = sg.client.mail._('send').post(request_body: mail.to_json)
     puts response.status_code
     puts response.body
