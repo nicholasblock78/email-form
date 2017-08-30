@@ -9,7 +9,7 @@
 </script>
   <h2 id="email-btn">Need more help?</h2>
   <div id="email-form">
-    <form class="" action="/send_email.html" method="POST">
+    <form class="" action="https://agile-river-34245.herokuapp.com/send_email.html" method="POST">
       <label for="name">Subject<span class="require">*</span>: </label>
       <input required="required" id="email-subject" type="text" name="subject" value="" placeholder="Subject" />
       <br/>
@@ -22,6 +22,7 @@
       <label for="reproduce">Steps to Reproduce: </label>
       <textarea rows="4" columns="50" id="reproduce" type="textarea" name="reproduce" value="" placeholder="Steps to Reproduce"></textarea>
       <input id="href" type="hidden" name="href" value=""/>
+      <br/>
       <input type="submit" name="" value="Submit" onclick="thankYou()"/>
     </form>
   </div>
