@@ -14,17 +14,12 @@ form {
   padding: 1%;
 }
 
-form input {
+input, textarea {
   display: block;
   vertical-align: right;
   width: 150px;
 }
 
-input[type=textarea] {
-  height: 150px;
-  width: 300px;
-
-}
 
 input[type=submit] {
   margin-top: 1%;
