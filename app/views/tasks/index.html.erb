@@ -1,21 +1,15 @@
 <h1>Testing for Support Email Form Pop-Up</h1>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
 <script type="text/javascript">
-$(function () {
-  $("#email-btn").on("click", function(e) {
-    // e.preventDefault();
-    $("#email-form").toggle();
-    $("div").show();
+  function getHref() {
     document.getElementById("href").value = window.location.href;
-
-  });
-})
+  }
+  function thankYou() {
+    alert("Thank you for submitting a Support case! You should receive an email confirmation shortly.")
+  }
 </script>
-  <h2 id="email-btn" type="button" name="button">Need more help?</h2>
-
-
+  <h2 id="email-btn">Need more help?</h2>
   <div id="email-form">
-    <form class="" action="/send_email.html" method="POST" onsubmit="">
+    <form class="" action="/send_email.html" method="POST">
       <label for="name">Subject<span class="require">*</span>: </label>
       <input required="required" id="email-subject" type="text" name="subject" value="" placeholder="Subject" />
       <br/>
@@ -23,11 +17,11 @@ $(function () {
       <input required="required" id="email-email" type="text" name="email_to_send" value="" placeholder="Email" />
       <br/>
       <label for="description">Description<span class="require">*</span>: </label>
-      <textarea rows="4" columns="50" required="required" id="email-description" type="textarea" name="description" value="" placeholder="Description"></textarea>
+      <textarea oninput="getHref()" rows="4" columns="50" required="required" id="email-description" type="textarea" name="description" value="" placeholder="Description"></textarea>
       <br/>
       <label for="reproduce">Steps to Reproduce: </label>
       <textarea rows="4" columns="50" id="reproduce" type="textarea" name="reproduce" value="" placeholder="Steps to Reproduce"></textarea>
       <input id="href" type="hidden" name="href" value=""/>
-      <input type="submit" name="" value="Submit"/>
+      <input type="submit" name="" value="Submit" onclick="thankYou()"/>
     </form>
   </div>
