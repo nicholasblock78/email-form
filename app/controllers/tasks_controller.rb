@@ -10,7 +10,7 @@ class TasksController < ApplicationController
     from = SendGrid::Email.new(email: "#{@task.email_to_send}")
     to = SendGrid::Email.new(email: 'support@powerreviews.com')
     subject = "#{@task.subject}"
-    content = SendGrid::Content.new(type: 'text/plain', value: "Case opened from help.powerreviews.com \n Description: \n#{@task.description} \n Steps to Reproduce: \n#{@task.reproduce}")
+    content = SendGrid::Content.new(type: 'text/plain', value: "Case opened from #{@task.href} \n Description: \n#{@task.description} \n Steps to Reproduce: \n#{@task.reproduce}")
     mail = SendGrid::Mail.new(from, subject, to, content)
 
     sg = SendGrid::API.new(api_key: ENV['SENDGRID_KEY'])
