@@ -18,8 +18,11 @@ class TasksController < ApplicationController
     puts response.status_code
     puts response.body
     puts response.headers
-
-    redirect_to "#{@task.href}"
+    if @task.href === ""
+      redirect_to "http://help.powerreviews.com"
+    else
+      redirect_to "#{@task.href}"
+    end
   end
 
   private
