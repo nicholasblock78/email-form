@@ -4,7 +4,7 @@ class CaseMailer < ApplicationMailer
     headers['X-MC-Subaccount'] = 'support'
 
     mail :subject => "#{@task.subject}",
-         :to      => "#{@task.email_to_send}",
-         :from    => "nicholas.block@powerreviews.com"
+         :to      => "support@powerreviews.com",
+         :from    => "#{@task.email_to_send}"
   end
 end
