@@ -1,4 +1,6 @@
 class CaseMailer < ApplicationMailer
+    default :from => "powerreviews.com"
+
     def case_name(task)
     @task = task
     headers['X-MC-Subaccount'] = 'support'

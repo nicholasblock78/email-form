@@ -1,15 +1,15 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # config.action_mailer.default_url_options = { :host => 'powerreviews.com' }
   config.action_mailer.smtp_settings = {
     :address   => "smtp.mandrillapp.com",
     :port      => 587, # ports 587 and 2525 are also supported with STARTTLS
     # :enable_starttls_auto => true, # detects and uses STARTTLS
-    :domain => "powerreviews.com",
     :user_name => "#{ENV["MAILCHIMP_U"]}",
     :password  => "#{ENV["MAILCHIMP_P"]}", # SMTP password is any valid API key
     # :authentication => 'login', # Mandrill supports 'plain' or 'login'
-    # :domain => 'yourdomain.com', # your domain to identify your server when connecting
+    # :domain => 'powerreviews.com', # your domain to identify your server when connecting
   }
 
   # In the development environment your application's code is reloaded on
@@ -38,7 +38,7 @@ Rails.application.configure do
   end
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = false
 
